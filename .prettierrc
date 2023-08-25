@@ -1,0 +1,15 @@
+{
+    "overrides": [
+        {
+            "files": ["*.blade.php"],
+            "options": {
+                "noPhpSyntaxCheck": true,
+                "parser": "blade",
+                "printWidth": 260,
+                "sortHtmlAttributes": "alphabetical",
+                "tabWidth": 4,
+                "wrapAttributes": "force-expand-multiline"
+            }
+        }
+    ]
+}

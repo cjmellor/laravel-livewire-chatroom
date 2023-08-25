@@ -1,0 +1,75 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.7",
+        "laravel/breeze": "^1.23",
+        "laravel/framework": "^10.20",
+        "laravel/sanctum": "^3.2.6",
+        "laravel/tinker": "^2.8.1",
+        "livewire/livewire": "^2.12.6",
+        "pusher/pusher-php-server": "^7.2.3"
+    },
+    "require-dev": {
+        "driftingly/rector-laravel": "^0.14.2",
+        "fakerphp/faker": "^1.23",
+        "laravel/pint": "^1.11",
+        "laravel/sail": "^1.23.4",
+        "mockery/mockery": "^1.6.6",
+        "nunomaduro/collision": "^7.8.1",
+        "pestphp/pest": "^2.16",
+        "pestphp/pest-plugin-drift": "^2.3",
+        "phpunit/phpunit": "^10.3.2",
+        "rector/rector": "^0.15.25",
+        "spatie/laravel-ignition": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

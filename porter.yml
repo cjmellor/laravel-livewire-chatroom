@@ -1,0 +1,10 @@
+services:
+  - name: Queue
+    command: php artisan queue:work
+
+  - name: Serve
+    command: php artisan serve
+
+  - name: Vite
+    command: yarn run dev
+
